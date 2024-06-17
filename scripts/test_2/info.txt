@@ -1,0 +1,10 @@
+linux - Premium v3 P0V3
+VCPU: 1
+Memory: 4
+Price/Month: 84.68
+
+
+windows - Premium v3 P0V3
+VCPU: 1
+Memory: 4
+Price/Month: 156.95

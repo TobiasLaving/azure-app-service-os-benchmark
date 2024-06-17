@@ -1,0 +1,42 @@
+This is ApacheBench, Version 2.3 <$Revision: 1913912 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking ap-benchmark-windows.azurewebsites.net (be patient)
+
+
+Server Software:        Microsoft-IIS/10.0
+Server Hostname:        ap-benchmark-windows.azurewebsites.net
+Server Port:            80
+
+Document Path:          /test?size=1
+Document Length:        1024 bytes
+
+Concurrency Level:      150
+Time taken for tests:   18.936 seconds
+Complete requests:      5000
+Failed requests:        0
+Total transferred:      6640000 bytes
+HTML transferred:       5120000 bytes
+Requests per second:    264.04 [#/sec] (mean)
+Time per request:       568.090 [ms] (mean)
+Time per request:       3.787 [ms] (mean, across all concurrent requests)
+Transfer rate:          342.43 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:       16  270 109.6    267    2591
+Processing:    32  291  70.6    284    1462
+Waiting:       28  291  68.7    284    1015
+Total:         48  562 135.8    544    2984
+
+Percentage of the requests served within a certain time (ms)
+  50%    544
+  66%    615
+  75%    636
+  80%    654
+  90%    686
+  95%    713
+  98%    741
+  99%    751
+ 100%   2984 (longest request)

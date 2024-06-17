@@ -1,0 +1,42 @@
+This is ApacheBench, Version 2.3 <$Revision: 1913912 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking ap-benchmark-linux.azurewebsites.net (be patient)
+
+
+Server Software:        Kestrel
+Server Hostname:        ap-benchmark-linux.azurewebsites.net
+Server Port:            80
+
+Document Path:          /test?size=10
+Document Length:        10240 bytes
+
+Concurrency Level:      150
+Time taken for tests:   23.299 seconds
+Complete requests:      5000
+Failed requests:        0
+Total transferred:      52540000 bytes
+HTML transferred:       51200000 bytes
+Requests per second:    214.60 [#/sec] (mean)
+Time per request:       698.962 [ms] (mean)
+Time per request:       4.660 [ms] (mean, across all concurrent requests)
+Transfer rate:          2202.21 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:       18  321 332.3    272    6930
+Processing:    38  349 254.3    283    5655
+Waiting:       34  296 117.5    278    5338
+Total:         55  669 451.1    561    8081
+
+Percentage of the requests served within a certain time (ms)
+  50%    561
+  66%    598
+  75%    634
+  80%    694
+  90%    798
+  95%   1388
+  98%   2335
+  99%   3051
+ 100%   8081 (longest request)

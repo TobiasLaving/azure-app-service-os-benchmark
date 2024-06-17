@@ -1,0 +1,10 @@
+linux - Premium v2 P1V2
+VCPU: 1
+Memory: 3.5
+Price/Month: 83.95
+
+
+windows - Premium v2 P1V2
+VCPU: 1
+Memory: 3.5
+Price/Month: 146.00
