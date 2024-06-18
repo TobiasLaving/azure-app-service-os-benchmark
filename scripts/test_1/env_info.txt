@@ -1,0 +1,5 @@
+Premium v2 P1V2
+VCPU: 1
+Memory: 3.5
+Linux price/month: 83.95 USD
+Windows price/month: 146.00 USD
