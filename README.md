@@ -1,14 +1,14 @@
 # Azure App Service OS Benchmark
 Is Windows or Linux best for running C# projects in Azure App Services?
 This is a small project I put together to see if I could see any difference between the two offerings.
-The program was, WebServer, deployed on different app service plans and tested using `scripts/run.sh`.
+The program, WebServer, was deployed on different app service plans and tested using `scripts/run.sh`.
 
 The various `scripts/test_{NUMBER}` folders in `scripts` contains all the collected output as well as some info on the app services and run info.
 
 ## TLDR
-The difference is usually small and choosing the best price (linux) should work well for most workloads that is similar to this basic app.
+The difference is usually small and choosing the best price (linux) should work well for most basic apps.
 
-Note that the libraries used by the application can have very different performance depending on os which this basic application and test do not [capture] (https://stackoverflow.com/questions/63447218/performance-issues-in-running-net-core-apis-in-azure-app-services-for-linux)
+Note that the libraries used by the application can have very different performance depending on os which this basic application and test do not [capture](https://stackoverflow.com/questions/63447218/performance-issues-in-running-net-core-apis-in-azure-app-services-for-linux).
 
 ## Methodolgy
 - The tests was carried out by deploying the application on otherwise empty app service plans using the 'Code' deployment method. I did not build my own container for the linux service. 
@@ -17,9 +17,9 @@ Note that the libraries used by the application can have very different performa
 
 - The idea is to measure how effective the web server is, testing downline performance such as databases or external services is not in scope.
 
-- All tests were done by performing 5000 requests over 150 threads.
+- All tests were done by performing 5000 requests with 150 done concurrently.
 
-- The tests were running from my work machine towards the azure over wifi
+- The tests were running from my work machine towards the azure over wifi.
 
 Local machine tooling:
 ```
@@ -76,12 +76,12 @@ Version               : 2.4.59-1
 ## Results
 
 ### Premium v2 P1V2
-VCPU: 1
-Memory: 3.5
-Linux price/month: 83.95 USD
-Windows price/month: 146.00 USD
+VCPU: 1  
+Memory: 3.5  
+Linux price/month: 83.95 USD  
+Windows price/month: 146.00 USD  
 
-| Response size (kB) | Measurement | Linux | Windows
+| Response size | Measurement | Linux | Windows
 |--|--|--|--|
 | **1 kb** | |
 | | Total time [seconds] | 2.945 | 1.980
@@ -97,12 +97,12 @@ Windows price/month: 146.00 USD
 | | Mean time per request [ms] | 1396.882 | 1401.193
 
 ### Premium v3 P0V3
-VCPU: 1
-Memory: 4
-Linux price/month: 84.68 USD
-Windows price/month: 156.95 USD
+VCPU: 1  
+Memory: 4  
+Linux price/month: 84.68 USD  
+Windows price/month: 156.95 USD  
 
-| Response size (kB) | Measurement | Linux | Windows
+| Response size | Measurement | Linux | Windows
 |--|--|--|--|
 | **1 kb** | |
 | | Total time [seconds] | 2.043 | 1.819
@@ -118,12 +118,12 @@ Windows price/month: 156.95 USD
 | | Mean time per request [ms] | 1431.004 | 1414.733
 
 ### Premium v3 P1V3
-VCPU: 2
-Memory: 8
-Linux price/month: 129.94 USD
-Windows price/month: 246.74 USD
+VCPU: 2  
+Memory: 8  
+Linux price/month: 129.94 USD  
+Windows price/month: 246.74 USD  
 
-| Response size (kB) | Measurement | Linux | Windows
+| Response size | Measurement | Linux | Windows
 |--|--|--|--|
 | **1 kb** | |
 | | Total time [seconds] | 2.243 | 1.955
@@ -139,21 +139,21 @@ Windows price/month: 246.74 USD
 | | Mean time per request [ms] | 1409.804 | 1383.870
 
 
-### CPU graph
+### Resource graph
 Below is pictures of the cpu graph recorded by azure. Note that this is the graph over the entire test run meaning the app service plan was updated etc.
 
 #### Linux
-Cpu
-![Linux average cpu](/azure-app-service-os-benchmark/assets/asp-benchmark-linux-cpu.png)
-Memory
-![Linux average memory](/azure-app-service-os-benchmark/assets/asp-benchmark-linux-memory.png)
+Cpu  
+![Linux average cpu](/azure-app-service-os-benchmark/docs/assets/asp-benchmark-linux-cpu.png)  
+Memory  
+![Linux average memory](/azure-app-service-os-benchmark/docs/assets/asp-benchmark-linux-memory.png)  
 #### Windows
-Cpu
-![Windows average cpu](/azure-app-service-os-benchmark/assets/asp-benchmark-windows-cpu.png)
-Memory
-![Windows average memory](/azure-app-service-os-benchmark/assets/asp-benchmark-windows-memory.png)
+Cpu  
+![Windows average cpu](/azure-app-service-os-benchmark/docs/assets/asp-benchmark-windows-cpu.png)  
+Memory   
+![Windows average memory](/azure-app-service-os-benchmark/docs/assets/asp-benchmark-windows-memory.png)  
 
-The most interesting aspect is the spike in linux cpu usage around 08:53
+The most interesting aspect is the spike in linux cpu usage around 08:53.
 This was relative early and the server was under any "great" load at the time. I have tried to recreate it without success which makes me lean towards thinking it was issues with the underlying Azure service rather than the app.
 
 

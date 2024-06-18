@@ -18,7 +18,7 @@ function read_data() {
 cat "${folder}/env_info.txt"
 echo ""
 
-echo "| Response size (kB) | Measurement | Linux | Windows"
+echo "| Response size | Measurement | Linux | Windows"
 echo "|--|--|--|--|"
 
 for size in 1 10 100; do
